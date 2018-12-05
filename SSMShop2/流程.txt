@@ -1,0 +1,21 @@
+
+SSM配置(spring、springMVC、mybatis)
+	首先配置spring，spring包括ioc和aop的事务控制。
+	ioc中，包括数据库的连接池，mybatis配置。mybatis配置
+SqlSessionFactoryBean配置session工厂，这东西可以创建session工厂，然后创建Mapper方法，使用类。
+MapperScannerConfigurer用来扫描mapper接口和实现类。
+	
+	aop中，spring提供了一个事务管理器：DataSourceTransactionManager。有两种配置方法
+	1)xml配置
+	2)注解方法
+		首先在xml中声明开启事务注解模式 <tx:annotation-driven/>	
+		
+	然后配置mybatis
+	懒加载，可以减少资源消耗
+		
+	之后配置springMVC
+	<context:annotation-config></context:annotation-config>
+		作用：激活@Required,@Autowired, @PostConstruct, @PreDestroy, @Resource, @PersistenceContext 
+	
+	最后，在web.xml中配置SSM的配置文件，可以让配置在服务器启动时启动。
+	
